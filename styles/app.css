@@ -1,0 +1,86 @@
+
+/* Global Grid Background */
+body {
+  background-color: #fcfcfd;
+  background-image: radial-gradient(#e5e7eb 1px, transparent 1px);
+  background-size: 32px 32px;
+  background-attachment: fixed;
+}
+
+/* Hero Section Radial Highlight */
+.hero-glow {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 600px;
+  background: radial-gradient(circle at 50% 0%, rgba(59, 130, 246, 0.08) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Code Editor Window Styling */
+.card-editor {
+  background: #ffffff;
+  border: 1px solid #e5e7eb;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.card-editor:hover {
+  border-color: #3b82f6;
+  transform: translateY(-4px);
+  box-shadow: 0 12px 24px -10px rgba(0, 0, 0, 0.05);
+}
+
+.card-header-dots {
+  display: flex;
+  gap: 6px;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-bottom: 1px solid #f3f4f6;
+}
+
+.dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+}
+
+.dot-red { background: #ff5f56; }
+.dot-amber { background: #ffbd2e; }
+.dot-green { background: #27c93f; }
+
+/* Markdown Styles Improvement */
+.prose pre {
+  background-color: #0d1117 !important;
+  border: 1px solid #30363d !important;
+  border-radius: 8px !important;
+  padding: 1.5rem !important;
+  line-height: 1.6;
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.9rem;
+  box-shadow: inset 0 2px 4px rgba(0,0,0,0.1);
+}
+
+.prose code:not(pre code) {
+  background-color: #f1f5f9;
+  color: #334155;
+  font-weight: 500;
+  padding: 0.15rem 0.4rem;
+  border-radius: 4px;
+  border: 1px solid #e2e8f0;
+}
+
+/* Typography Overrides */
+h1, h2, h3 {
+  letter-spacing: -0.025em;
+}
+
+.font-mono-tech {
+  font-family: 'JetBrains Mono', monospace;
+  font-size: 0.75rem;
+  letter-spacing: -0.01em;
+}

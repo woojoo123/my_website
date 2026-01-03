@@ -1,0 +1,30 @@
+
+{
+  "name": "personal-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc && vite build",
+    "preview": "vite preview",
+    "new:note": "node -e \"const fs=require('fs'); const title=process.argv[1] || 'New Note'; const slug=title.toLowerCase().replace(/ /g, '-'); const template='---\\ntitle: \\\"'+title+'\\\"\\ndate: \\\"'+new Date().toISOString().split('T')[0]+'\\\"\\ntags: []\\nsummary: \\\"\\\"\\n---\\n\\n## Context(상황)\\n'; if(!fs.existsSync('./content/notes')) fs.mkdirSync('./content/notes', {recursive:true}); fs.writeFileSync('./content/notes/'+slug+'.md', template); console.log('Created note: ' + slug);\"",
+    "new:project": "node -e \"const fs=require('fs'); const title=process.argv[1] || 'New Project'; const slug=title.toLowerCase().replace(/ /g, '-'); const template='---\\ntitle: \\\"'+title+'\\\"\\nperiod: \\\"\\\"\\nrole: \\\"\\\"\\nstack: []\\nsummary: \\\"\\\"\\nlinks: { github: \\\"\\\", demo: \\\"\\\" }\\n---\\n\\n## Problem\\n'; if(!fs.existsSync('./content/projects')) fs.mkdirSync('./content/projects', {recursive:true}); fs.writeFileSync('./content/projects/'+slug+'.md', template); console.log('Created project: ' + slug);\""
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3",
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "react-markdown": "^10.1.0",
+    "react-router-dom": "^7.11.0",
+    "remark-gfm": "^4.0.1"
+    
+  },
+  "devDependencies": {
+    "@types/react": "^19.0.0",
+    "@types/react-dom": "^19.0.0",
+    "@vitejs/plugin-react": "^4.3.0",
+    "typescript": "^5.0.0",
+    "vite": "^6.0.0"
+  }
+}
