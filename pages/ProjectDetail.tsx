@@ -3,9 +3,11 @@ import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import ReactMarkdown from 'react-markdown';
 import remarkGfm from 'remark-gfm';
+import rehypeRaw from 'rehype-raw';
 import { getProjectBySlug } from '../lib/content';
 import Badge from '../components/Badge';
 import NotFound from './NotFound';
+import '../styles/markdown.css';
 
 const ProjectDetail: React.FC = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -39,6 +41,26 @@ const ProjectDetail: React.FC = () => {
         </div>
         
         <div className="flex gap-4">
+          {meta.links?.backend && (
+            <a 
+              href={meta.links.backend} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm font-bold bg-gray-900 text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
+            >
+              GitHub 저장소
+            </a>
+          )}
+          {meta.links?.frontend && (
+            <a 
+              href={meta.links.frontend} 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-sm font-bold border border-blue-200 bg-blue-50 text-blue-700 px-5 py-2.5 rounded-xl hover:bg-blue-100 transition-colors"
+            >
+              라이브 데모
+            </a>
+          )}
           {meta.links?.github && (
             <a 
               href={meta.links.github} 
@@ -62,8 +84,11 @@ const ProjectDetail: React.FC = () => {
         </div>
       </header>
 
-      <div className="prose prose-slate max-w-none prose-headings:font-bold prose-headings:text-gray-900 prose-p:text-gray-700 prose-li:text-gray-700">
-        <ReactMarkdown remarkPlugins={[remarkGfm]}>
+      <div className="md">
+        <ReactMarkdown 
+          remarkPlugins={[remarkGfm]} 
+          rehypePlugins={[rehypeRaw]}
+        >
           {content}
         </ReactMarkdown>
       </div>

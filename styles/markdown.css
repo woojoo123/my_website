@@ -1,0 +1,183 @@
+/* ===== Markdown Typography ===== */
+.md {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 24px 18px;
+  line-height: 1.85;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+}
+
+.md h1, .md h2, .md h3 {
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+.md h2 {
+  margin: 2.8rem 0 1.2rem;
+  font-size: 28px;
+}
+
+.md h3 {
+  margin: 1.9rem 0 0.8rem;
+  font-size: 20px;
+}
+
+.md p {
+  margin: 0 0 1.05rem;
+}
+
+.md hr {
+  margin: 2.4rem 0;
+  border: 0;
+  border-top: 1px solid rgba(0,0,0,0.10);
+}
+
+.md ul, .md ol {
+  margin: 0.8rem 0 1.35rem;
+  padding-left: 1.25rem;
+}
+
+.md li {
+  margin: 0.42rem 0;
+}
+
+.md strong {
+  font-weight: 700;
+}
+
+.md a {
+  text-decoration: none;
+  border-bottom: 1px solid rgba(0,0,0,0.25);
+}
+.md a:hover {
+  border-bottom-color: rgba(0,0,0,0.55);
+}
+
+/* ===== Tables ===== */
+.md table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 1.1rem 0 1.7rem;
+  overflow: hidden;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.08);
+}
+
+.md th, .md td {
+  text-align: left;
+  padding: 12px 14px;
+  border-bottom: 1px solid rgba(0,0,0,0.06);
+  vertical-align: top;
+}
+
+.md th {
+  background: rgba(0,0,0,0.03);
+  font-weight: 700;
+}
+
+.md tr:last-child td {
+  border-bottom: 0;
+}
+
+/* ===== Code ===== */
+.md pre {
+  margin: 1.1rem 0 1.6rem;
+  padding: 14px 16px;
+  overflow: auto;
+  border-radius: 12px;
+  background: rgba(0,0,0,0.06);
+}
+
+.md code {
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
+  font-size: 0.92em;
+}
+
+.md :not(pre) > code {
+  padding: 0.15em 0.35em;
+  border-radius: 8px;
+  background: rgba(0,0,0,0.06);
+}
+
+/* ===== Details (Accordion) ===== */
+.md details {
+  margin: 0.9rem 0 1.5rem;
+  padding: 14px 16px;
+  border-radius: 12px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.02);
+}
+
+.md summary {
+  cursor: pointer;
+  user-select: none;
+}
+
+.md summary strong {
+  font-weight: 700;
+}
+
+/* ===== Custom Components ===== */
+.md .badges {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin: 0.6rem 0 1.4rem;
+}
+
+.md .badge {
+  display: inline-flex;
+  align-items: center;
+  padding: 6px 10px;
+  border-radius: 999px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.03);
+  font-size: 13px;
+  line-height: 1;
+}
+
+.md .callout {
+  margin: 1.1rem 0 1.7rem;
+  padding: 16px 16px;
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(0,0,0,0.02);
+}
+
+.md .callout-title {
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+.md .grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+  margin: 0.8rem 0 1.6rem;
+}
+
+.md .card {
+  border-radius: 14px;
+  border: 1px solid rgba(0,0,0,0.10);
+  background: rgba(255,255,255,0.7);
+  padding: 16px 16px;
+}
+
+.md .card h3 {
+  margin-top: 0.2rem;
+}
+
+/* ===== Responsive ===== */
+@media (max-width: 820px) {
+  .md {
+    padding: 18px 14px;
+    font-size: 15.5px;
+  }
+  .md h2 { font-size: 24px; }
+  .md h3 { font-size: 18px; }
+  .md .grid-2 {
+    grid-template-columns: 1fr;
+  }
+}
+

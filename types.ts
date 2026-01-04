@@ -9,6 +9,8 @@ export interface ProjectMeta {
   links?: {
     github?: string;
     demo?: string;
+    backend?: string;
+    frontend?: string;
   };
   slug: string;
 }

@@ -1,39 +1,180 @@
 ---
-title: "JoinUs - 개발자 커뮤니티 플랫폼"
-period: "2023.05 - 2023.08"
-role: "리드 개발자"
-stack: ["React", "Spring Boot", "JPA", "MariaDB", "Docker"]
-summary: "개발자들이 지식을 공유하고 지역 모임에 참여할 수 있는 실시간 커뮤니티 플랫폼입니다."
-image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1000"
+title: "Joinus - 해외공구 플랫폼"
+period: "2025.11 - 2025.12"
+role: "백엔드 개발자"
+summary: "지역 공동구매·입점(납품)·회원 관리를 하나의 운영 흐름으로 통합한 해외공구 플랫폼입니다."
+stack:
+  - React
+  - JavaScript
+  - HTML
+  - CSS
+  - Java
+  - Spring Boot
+  - Spring Security
+  - MariaDB
+  - JPA
+  - QueryDSL
+  - Git
+  - GitHub
+image: "/assets/projects/joinus/thumbnail.png"
 links:
-  github: "https://github.com/woojoo123/joinus"
-  demo: "https://joinus-demo.com"
+  backend: "https://github.com/kosta-303-final-proj/Joinus_back"
+  frontend: "https://github.com/kosta-303-final-proj/Joinus_front"
 ---
 
-## 문제 정의
-기존의 커뮤니티 플랫폼은 지나치게 공식적이거나(LinkedIn), 혹은 너무 혼란스러운(Discord) 경우가 많았습니다. 특히 개발자들 간의 '지역 기반' 오프라인 모임을 위한 접근성이 부족하다는 문제점이 있었습니다.
+## 프로젝트 개요
 
-## 목표 및 범위
-포럼의 구조적인 장점과 위치 기반 서비스의 즉각성을 결합한 플랫폼 구축을 목표로 했습니다.
-- 실시간 알림 시스템
-- 지도를 이용한 지역별 모임 필터링
-- 모바일 접근성을 고려한 반응형 UI
+지역 공동구매·입점(납품)·회원 관리를 **하나의 운영 흐름**으로 통합한 해외공구 플랫폼입니다.
 
-## 아키텍처
-빠른 프로토타이핑을 위해 초기에는 모놀리식 아키텍처를 채택했습니다. 백엔드는 Spring Boot, 프런트엔드는 React를 사용했으며, 실시간 기능을 위해 REST API와 WebSocket을 혼합하여 통신했습니다.
+<div class="callout">
+  <div class="callout-title">주요 포인트</div>
+  <ul>
+    <li><strong>인증/인가</strong>: Spring Security + JWT(Access/Refresh) + OAuth2</li>
+    <li><strong>운영 백오피스</strong>: 대시보드/통계, 납품 승인 및 상품 관리, 주문 처리</li>
+    <li><strong>고객센터</strong>: 공지/FAQ/1:1 문의(이미지 첨부) + 파일 메타데이터 관리</li>
+  </ul>
+</div>
 
-## 주요 흐름
-1. **사용자 온보딩**: OAuth2를 이용한 간편한 가입 프로세스.
-2. **모임 생성**: 지도에 위치를 핀으로 고정하고 시간을 설정하여 모임 개설.
-3. **참여 및 소통**: 댓글과 추천 시스템을 통해 양질의 콘텐츠 강조.
+---
 
-## 핵심 구현 사항
-Redis를 이용한 커스텀 캐싱 전략을 도입하여 MariaDB의 쿼리 부하를 줄였습니다. 특히 인기 게시물 조회 성능을 약 40% 개선하여 홈 화면 로딩 속도를 최적화했습니다.
+## 프로젝트 정보
+
+| 항목 | 내용 |
+| --- | --- |
+| 기간 | 2025.11 ~ 2025.12 |
+| 인원 | 4명 |
+| 역할 | 백엔드 개발자 |
+
+---
+
+## 기술 스택
+
+<div class="badges">
+  <span class="badge">React</span>
+  <span class="badge">JavaScript</span>
+  <span class="badge">HTML</span>
+  <span class="badge">CSS</span>
+  <span class="badge">Java</span>
+  <span class="badge">Spring Boot</span>
+  <span class="badge">Spring Security</span>
+  <span class="badge">MariaDB</span>
+  <span class="badge">JPA</span>
+  <span class="badge">QueryDSL</span>
+  <span class="badge">Git</span>
+  <span class="badge">GitHub</span>
+</div>
+
+---
+
+## 주요 기능
+
+### 회원/인증
+- 일반 로그인 + OAuth2 소셜 로그인
+- 마이페이지 기반 사용자 기능 제공
+
+### 공동구매
+- 제안 상품 → 공구 상품 등록 → 옵션 선택/주문/결제 흐름
+
+### 관리자(백오피스)
+- 대시보드/통계
+- 납품(업체 승인 및 상품 관리)
+- 주문 처리
+- 고객센터 운영
+
+### 고객센터
+- 공지/FAQ/1:1 문의(이미지 첨부)
+
+---
+
+## 내가 구현한 핵심 기여
+
+### 인증 및 회원 관리 시스템
+
+- JWT 기반 인증 시스템 구현 (Access Token / Refresh Token)
+- Spring Security를 활용한 보안 필터 체인 구성
+- OAuth2 소셜 로그인 연동 (카카오/네이버)
+- BCrypt를 이용한 비밀번호 암호화
+- 아이디/비밀번호 찾기 기능 (이름, 이메일 검증 기반)
+- 회원가입 시 유효성 검증 및 중복 체크
+
+### 고객센터 시스템
+
+- 공지사항 목록/상세 조회 (페이지네이션 적용)
+- FAQ 조회 기능
+- 1:1 문의 작성/조회 (이미지 첨부 지원)
+- 문의 카테고리별 분류 (주문, 배송, 취소/환불 등)
+- 파일 업로드 기능 구현
+
+### 관리자 대시보드 및 통계
+
+- 실시간 대시보드 (매출, 공구 현황, 주문 대기 건수)
+- 기간별 매출 통계 조회 (일/주/월 단위)
+- 상품별 통계 분석
+- 알림 발송 시스템
+- 공구 진행 현황 모니터링
+
+### 납품 관리 시스템
+
+- 납품 업체 신청 및 승인 관리
+- 업체별 상품 등록/조회 기능
+- 납품 상품 상태 관리 (대기/승인/반려)
+- 납품문의 기능
+
+---
 
 ## 트러블슈팅
-**문제**: 실시간 채팅의 응답 지연 발생.
-**원인**: 모든 메시지를 브로드캐스팅하기 전, 데이터베이스에 동기적으로 저장하면서 병목 현상이 발생했습니다.
-**해결**: Spring Events를 이용해 메시지 저장 로직을 비동기 이벤트 리스너로 분리하여 해결했습니다.
 
-## 결과 및 향후 계획
-약 200명 이상의 베타 테스터를 확보했습니다. 향후에는 채팅 모듈을 별도로 분리하여 스케일링이 용이하도록 마이크로서비스 아키텍처로 전환할 계획입니다.
+### OAuth 소셜 로그인 토큰 URL 노출 취약점 개선
+
+- **문제**: OAuth 성공 후 JWT 토큰이 URL querystring으로 전달되어 히스토리/로그/Referer 노출 가능
+- **해결**: 세션 기반 저장 + 토큰 교환 API(1회성) + 프론트 히스토리 제거
+- **결과**: URL/히스토리/서버 로그/Referer에 토큰 잔존 차단으로 보안 안정성 향상
+
+<details>
+  <summary><strong>해결 과정 자세히 보기</strong></summary>
+
+1) URL에 토큰을 전달하지 않고 세션에 저장, redirect는 `?success=true`  
+2) `GET /api/auth/oauth/token` 추가(세션에서 토큰 조회 후 즉시 삭제 — 1회성)  
+3) 프론트에서 토큰 교환 호출 + 히스토리 제거 처리
+
+```js
+fetch('/api/auth/oauth/token', { credentials: 'include' })
+navigate(..., { replace: true })
+```
+
+</details>
+
+---
+
+## 산출물
+
+<details>
+  <summary><strong>ERD (27개 엔티티)</strong></summary>
+  
+  <img src="/assets/projects/joinus/erd.png" alt="ERD 다이어그램" style="max-width: 100%; border-radius: 8px; margin: 0.5rem 0;" />
+</details>
+
+<details>
+  <summary><strong>시스템 아키텍처 다이어그램</strong></summary>
+  
+  <img src="/assets/projects/joinus/architecture.png" alt="시스템 아키텍처" style="max-width: 100%; border-radius: 8px; margin: 0.5rem 0;" />
+</details>
+
+<details>
+  <summary><strong>IA 설계</strong></summary>
+  
+  <img src="/assets/projects/joinus/IA.png" alt="IA 설계" style="max-width: 100%; border-radius: 8px; margin: 0.5rem 0;" />
+</details>
+
+<details>
+  <summary><strong>화면 설계서 (Figma)</strong></summary>
+  
+  <img src="/assets/projects/joinus/figma.png" alt="화면 설계서" style="max-width: 100%; border-radius: 8px; margin: 0.5rem 0;" />
+</details>
+
+---
+
+## 링크
+
+- **Backend**: https://github.com/kosta-303-final-proj/Joinus_back
+- **Frontend**: https://github.com/kosta-303-final-proj/Joinus_front
