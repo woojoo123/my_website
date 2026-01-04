@@ -39,50 +39,54 @@ const ProjectDetail: React.FC = () => {
         <div className="mb-8 flex flex-wrap gap-2">
           {meta.stack.map(tag => <Badge key={tag}>{tag}</Badge>)}
         </div>
-        
-        <div className="flex gap-4">
-          {meta.links?.backend && (
-            <a 
-              href={meta.links.backend} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm font-bold bg-gray-900 text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
-            >
-              GitHub 저장소
-            </a>
-          )}
-          {meta.links?.frontend && (
-            <a 
-              href={meta.links.frontend} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm font-bold border border-blue-200 bg-blue-50 text-blue-700 px-5 py-2.5 rounded-xl hover:bg-blue-100 transition-colors"
-            >
-              라이브 데모
-            </a>
-          )}
-          {meta.links?.github && (
-            <a 
-              href={meta.links.github} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm font-bold bg-gray-900 text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
-            >
-              GitHub 저장소
-            </a>
-          )}
-          {meta.links?.demo && (
-            <a 
-              href={meta.links.demo} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="text-sm font-bold border border-blue-200 bg-blue-50 text-blue-700 px-5 py-2.5 rounded-xl hover:bg-blue-100 transition-colors"
-            >
-              라이브 데모
-            </a>
-          )}
-        </div>
       </header>
+
+      {(meta.links?.backend || meta.links?.frontend || meta.links?.github || meta.links?.demo) && (
+        <div className="mb-12">
+          <div className="flex gap-4">
+            {meta.links?.backend && (
+              <a 
+                href={meta.links.backend} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-bold bg-gray-900 text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
+              >
+                GitHub 저장소
+              </a>
+            )}
+            {meta.links?.frontend && (
+              <a 
+                href={meta.links.frontend} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-bold border border-blue-200 bg-blue-50 text-blue-700 px-5 py-2.5 rounded-xl hover:bg-blue-100 transition-colors"
+              >
+                라이브 데모
+              </a>
+            )}
+            {meta.links?.github && (
+              <a 
+                href={meta.links.github} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-bold bg-gray-900 text-white px-5 py-2.5 rounded-xl hover:bg-gray-800 transition-colors shadow-sm"
+              >
+                GitHub 저장소
+              </a>
+            )}
+            {meta.links?.demo && (
+              <a 
+                href={meta.links.demo} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="text-sm font-bold border border-blue-200 bg-blue-50 text-blue-700 px-5 py-2.5 rounded-xl hover:bg-blue-100 transition-colors"
+              >
+                라이브 데모
+              </a>
+            )}
+          </div>
+        </div>
+      )}
 
       <div className="md">
         <ReactMarkdown 

@@ -18,8 +18,7 @@ stack:
   - GitHub
 image: "/assets/projects/joinus/thumbnail.png"
 links:
-  backend: "https://github.com/kosta-303-final-proj/Joinus_back"
-  frontend: "https://github.com/kosta-303-final-proj/Joinus_front"
+  backend: "https://github.com/orgs/kosta-303-final-proj/repositories"
 ---
 
 ## 프로젝트 개요
@@ -172,9 +171,4 @@ navigate(..., { replace: true })
   <img src="/assets/projects/joinus/figma.png" alt="화면 설계서" style="max-width: 100%; border-radius: 8px; margin: 0.5rem 0;" />
 </details>
 
----
 
-## 링크
-
-- **Backend**: https://github.com/kosta-303-final-proj/Joinus_back
-- **Frontend**: https://github.com/kosta-303-final-proj/Joinus_front

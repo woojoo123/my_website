@@ -215,8 +215,4 @@ links:
   <img src="/assets/projects/pumda/shelter_log.png" alt="보호소 일상" style="max-width: 100%; border-radius: 8px; margin: 0.5rem 0;" />
 </details>
 
----
 
-## 링크
-
-- **GitHub**: https://github.com/kosta-303-mini-proj/shelter-server
