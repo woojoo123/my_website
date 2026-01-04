@@ -15,7 +15,7 @@ stack:
   - MyBatis
   - Git
   - GitHub
-image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?auto=format&fit=crop&q=80&w=1400"
+image: "assets/projects/pumda/thumbnail.png"
 links:
   github: "https://github.com/kosta-303-mini-proj/shelter-server"
 ---
